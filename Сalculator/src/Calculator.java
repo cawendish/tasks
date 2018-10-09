@@ -4,7 +4,8 @@ import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
 public class Calculator {
-
+	private static final int MIN_ELEMENT_COUNT = 3;
+	
 	public Calculator() {
 
 	}
@@ -48,7 +49,7 @@ public class Calculator {
 		String polishStr = polishNotation(inputStr);
 		StringTokenizer tokens = new StringTokenizer(polishStr);
 		
-		if (tokens.countTokens() < 3) {
+		if (tokens.countTokens() < MIN_ELEMENT_COUNT) {
 			throw new IllegalArgumentException(Constants.ERROR_NOT_ENOUGH_ELEMENTS);
 		}
 		
